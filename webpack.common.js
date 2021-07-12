@@ -9,11 +9,19 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
+      {
+        test: /\.(png|jpe?g|gif)/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
       {
         test: /\.css$/,
         use: [
@@ -22,9 +30,6 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: {
-              url: false,
-            },
           },
         ],
       },

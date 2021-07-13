@@ -2,7 +2,7 @@
 
 const createRestaurantDetailTemplate = (restaurant) => `
 <div class="restaurant-header">
-<img class="restaurant-poster" src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" alt="${restaurant.name}" />
+<img class="restaurant-poster lazyload" src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" alt="${restaurant.name}" />
 <h1 class="restaurant-title">${restaurant.name}</h1>
 </div>
 
@@ -49,7 +49,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
 <div class="restaurant-item">
   <div class="restaurant-item-header">
-      <img class="restaurant-item-header-poster" alt="${restaurant.name || '-'}"
+      <img class="restaurant-item-header-poster lazyload" alt="${restaurant.name || '-'}"
           src="https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}">
   </div>
   <div class="restaurant-item-content">

@@ -135,7 +135,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    background-image: url("../public/images/heros/hero-image_2-large.jpg");
+    background-image: url("images/heros/hero-image_2-large.jpg");
     background-position: center;
     background-color: green;
 }

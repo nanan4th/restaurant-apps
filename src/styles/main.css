@@ -127,6 +127,10 @@ body {
     font-weight: normal;
   }
 
+  .content .query {
+    width: 90%;
+  }
+
   .hero {
     display: grid;
     align-items: center;

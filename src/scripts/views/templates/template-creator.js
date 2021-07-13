@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-
 const createRestaurantDetailTemplate = (restaurant) => `
 <div class="restaurant-header">
 <img class="restaurant-poster lazyload" src="https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}" alt="${restaurant.name}" />

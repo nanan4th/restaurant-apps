@@ -40,7 +40,7 @@ describe('Liking A Restaurant', () => {
     await FavoriteRestaurant.putRestaurant({ id: 1 });
 
     // Simulasikan pengguna menekan tombol suka restaurant
-    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    document.querySelector('#likeButtonContainer').dispatchEvent(new Event('click'));
 
     // tidak ada restaurant yang ganda
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([{ id: 1 }]);
@@ -51,7 +51,7 @@ describe('Liking A Restaurant', () => {
   it('should not add a restaurant when it has no id', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
-    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    document.querySelector('#likeButtonContainer').dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([]);
   });

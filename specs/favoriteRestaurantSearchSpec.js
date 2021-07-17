@@ -69,14 +69,14 @@ describe('Searching restaurants', () => {
           name: 'Satu',
         }
       ]);
-      expect(document.querySelectorAll('.restaurant__name')
+      expect(document.querySelectorAll('.grid-container-post h3')
         .item(0).textContent)
         .toEqual('Satu');
     });
 
     it('should show - when the restaurant returned does not contain a name', (done) => {
       document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
-        const restaurantTitles = document.querySelectorAll('.restaurant__name');
+        const restaurantTitles = document.querySelectorAll('.grid-container-post h3');
         expect(restaurantTitles.item(0).textContent).toEqual('-');
         done();
       });

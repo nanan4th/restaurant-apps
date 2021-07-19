@@ -42,11 +42,11 @@ describe('Searching restaurants', () => {
       searchRestaurants('restaurant a');
 
       expect(favoriteRestaurants.searchRestaurants)
-        .toHaveBeenCalledWith('restaurant a');
+          .toHaveBeenCalledWith('restaurant a');
     });
 
     it('should show the found restaurants', () => {
-      presenter._showFoundRestaurants([{ id: 1 }]);
+      presenter._showFoundRestaurants([{id: 1}]);
       expect(document.querySelectorAll('.restaurant-item').length).toEqual(1);
 
       presenter._showFoundRestaurants([
@@ -57,7 +57,7 @@ describe('Searching restaurants', () => {
         {
           id: 2,
           name: 'Dua',
-        }
+        },
       ]);
       expect(document.querySelectorAll('.restaurant-item').length).toEqual(2);
     });
@@ -67,11 +67,11 @@ describe('Searching restaurants', () => {
         {
           id: 1,
           name: 'Satu',
-        }
+        },
       ]);
       expect(document.querySelectorAll('.grid-container-post h3')
-        .item(0).textContent)
-        .toEqual('Satu');
+          .item(0).textContent)
+          .toEqual('Satu');
     });
 
     it('should show - when the restaurant returned does not contain a name', (done) => {
@@ -82,7 +82,7 @@ describe('Searching restaurants', () => {
       });
 
       favoriteRestaurants.searchRestaurants.withArgs('restaurant a').and.returnValues([
-        { id: 444 },
+        {id: 444},
       ]);
 
       searchRestaurants('restaurant a');
@@ -127,7 +127,7 @@ describe('Searching restaurants', () => {
     it('should not show any restaurant', (done) => {
       document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
         expect(document.querySelectorAll('.restaurant-item').length)
-          .toEqual(0);
+            .toEqual(0);
         done();
       });
 

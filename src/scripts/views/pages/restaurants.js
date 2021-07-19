@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import TheRestaurantDbSource from '../../data/therestaurantdb-source';
 import {createRestaurantItemTemplate} from '../templates/template-creator';
 

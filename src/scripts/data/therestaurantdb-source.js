@@ -1,4 +1,3 @@
-/* eslint-disable new-cap */
 import API_ENDPOINT from '../globals/api-endpoints';
 
 class TheRestaurantDbSource {

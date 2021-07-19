@@ -29,7 +29,7 @@ describe('Showing all favorite restaurants', () => {
     it('should show the information that no restaurants have been liked', (done) => {
       document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
         expect(document.querySelectorAll('.restaurant-item__not__found').length)
-          .toEqual(1);
+            .toEqual(1);
 
         done();
       });

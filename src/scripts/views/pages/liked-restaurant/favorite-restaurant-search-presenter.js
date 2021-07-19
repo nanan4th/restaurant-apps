@@ -1,5 +1,5 @@
 class FavoriteRestaurantSearchPresenter {
-  constructor({ favoriteRestaurants, view }) {
+  constructor({favoriteRestaurants, view}) {
     this._view = view;
     this._listenToSearchRequestByUser();
     this._favoriteRestaurants = favoriteRestaurants;

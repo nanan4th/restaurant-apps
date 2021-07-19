@@ -11,8 +11,8 @@ const Favorite = {
   },
 
   async afterRender() {
-    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurant });
-    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurant });
+    new FavoriteRestaurantShowPresenter({view, favoriteRestaurants: FavoriteRestaurant});
+    new FavoriteRestaurantSearchPresenter({view, favoriteRestaurants: FavoriteRestaurant});
   },
 };
 

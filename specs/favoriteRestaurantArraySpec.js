@@ -1,4 +1,4 @@
-import { itActsAsFavoriteRestaurantModel } from './contract/favoriteRestaurantContract';
+import {itActsAsFavoriteRestaurantModel} from './contract/favoriteRestaurantContract';
 
 let favoriteRestaurants = [];
 
@@ -33,7 +33,7 @@ const FavoriteRestaurantArray = {
     // cara boros menghapus restaurant dengan meng-copy restaurant yang ada
     // kecuali restaurant dengan id == id
     favoriteRestaurants = favoriteRestaurants.filter(
-      (restaurant) => restaurant.id != id);
+        (restaurant) => restaurant.id != id);
   },
 
   async searchRestaurants(query) {

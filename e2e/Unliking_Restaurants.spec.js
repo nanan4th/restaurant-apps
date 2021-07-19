@@ -2,36 +2,36 @@ const assert = require('assert');
 
 Feature('Unliking Restaurants');
 
-Before(({ I }) => {
-    I.amOnPage('/#/favorite');
+Before(({I}) => {
+  I.amOnPage('/#/favorite');
 });
 
-Scenario('unliking one restaurant', async ({ I }) => {
-    I.see('Tidak ada restaurant untuk ditampilkan', '.restaurant-item__not__found');
+Scenario('unliking one restaurant', async ({I}) => {
+  I.see('Tidak ada restaurant untuk ditampilkan', '.restaurant-item__not__found');
 
-    I.amOnPage('/');
+  I.amOnPage('/');
 
-    I.seeElement('.grid-container-post a');
+  I.seeElement('.grid-container-post a');
 
-    const firstRestaurant = locate('.grid-container-post a').first();
-    const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
-    I.click(firstRestaurant);
+  const firstRestaurant = locate('.grid-container-post a').first();
+  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
+  I.click(firstRestaurant);
 
 
-    I.seeElement('#likeButton');
-    I.click('#likeButton');
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
 
-    I.amOnPage('/#/favorite');
-    I.seeElement('.restaurant-item')
-    const likedRestaurantTitle = await I.grabTextFrom('.grid-container-post a');
+  I.amOnPage('/#/favorite');
+  I.seeElement('.restaurant-item');
+  const likedRestaurantTitle = await I.grabTextFrom('.grid-container-post a');
 
-    assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
+  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
 
-    I.click(firstRestaurant)
+  I.click(firstRestaurant);
 
-    I.seeElement('#likeButton')
-    I.click('#likeButton')
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
 
-    I.amOnPage('/#/favorite')
-    I.see('Tidak ada restaurant untuk ditampilkan', '.restaurant-item__not__found');
+  I.amOnPage('/#/favorite');
+  I.see('Tidak ada restaurant untuk ditampilkan', '.restaurant-item__not__found');
 });

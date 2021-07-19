@@ -60,15 +60,15 @@ module.exports = {
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          priority: -10,
         },
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -82,9 +82,9 @@ module.exports = {
           to: path.resolve(__dirname, 'dist'),
           globOptions: {
             ignore: ['**/images/**'],
-          }
-        }
-      ]
+          },
+        },
+      ],
     }),
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
@@ -94,9 +94,9 @@ module.exports = {
         {
           test: /\.(jpe?g|png)/,
           options: {
-            quality: 50
-          }
-        }
+            quality: 50,
+          },
+        },
       ],
       overrideExtension: true,
     }),
@@ -109,8 +109,8 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: "static", 
-      openAnalyzer: false
+      analyzerMode: 'static',
+      openAnalyzer: false,
     }),
   ],
 };
